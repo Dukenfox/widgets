@@ -1,0 +1,11 @@
+.parent {
+  display: grid;
+  place-items: center;
+}
+
+.searchbar {
+  width: clamp(23ch, 50%, 46ch);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
