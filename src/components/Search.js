@@ -18,7 +18,19 @@ const Search = () => {
       });
       setResults(data.query.search);
     };
-    search();
+
+    if (term && !results.length) {
+      search();
+    } else {
+      const timeoutId = setTimeout(() => {
+        if (term) {
+          search();
+        }
+      }, 500);
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
   }, [term]);
 
   const renderedResults = results.map((result) => {
@@ -44,7 +56,7 @@ const Search = () => {
     <div>
       <div className="ui form">
         <div className="feild">
-          <label>Enter Search Term</label>
+          <label>wikipedia Search</label>
           <input
             className="input"
             onChange={(e) => setTerm(e.target.value)}

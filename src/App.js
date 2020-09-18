@@ -1,6 +1,7 @@
 import React from "react";
 import Accordion from "./components/Accordion";
 import Search from "./components/Search";
+import Dropdown from "./components/Search";
 import "./App.css";
 
 const items = [
@@ -21,7 +22,7 @@ const items = [
 export default () => {
   return (
     <div className="parent">
-      <Search classname="searchbar" />
+      <Dropdown className="child" />
     </div>
   );
 };
