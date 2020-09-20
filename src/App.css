@@ -3,7 +3,7 @@
   place-items: center;
 }
 
-.searchbar {
+.child {
   width: clamp(23ch, 50%, 46ch);
   display: flex;
   flex-direction: column;
