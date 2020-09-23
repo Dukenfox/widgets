@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const Dropdown = ({ options, selected, onSelectedChange }) => {
+const Dropdown = ({ label, options, selected, onSelectedChange }) => {
   const [open, setopen] = useState(false);
   const ref = useRef();
 
@@ -27,19 +27,17 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
       <div
         key={option.value}
         className="item"
-        onClick={() => {
-          onSelectedChange(option);
-        }}
+        onClick={() => onSelectedChange(option)}
       >
         {option.label}
       </div>
     );
   });
-  console.log(ref.current);
+
   return (
     <div ref={ref} className="ui form">
       <div className="field">
-        <label className="label"> Select a Color</label>
+        <label className="ui label"> {label} </label>
         <div
           onClick={() => {
             setopen(!open);
